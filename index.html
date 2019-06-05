@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div id="app" class="container-fluid">
+        <div id="title" class="row">
+            <div class="col-12">
+                <h1>To Do</h1>
+            </div>
+        </div>
+
+        <div id="to-do-item" class="row">
+            <div class="col-12">
+                <cell 
+                    v-for="item in toDoItems"
+                    :key="item.id"
+                    :item="item"
+                    @delete-btn-clicked="deleteItem"
+                    @copy-btn-clicked="copyItem"
+                ></cell>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <button type="button" @click="addItem">追加</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/bundle.js"></script>
+</body>
+
+</html>
